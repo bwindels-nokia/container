@@ -437,5 +437,20 @@ module.exports = testCase({
             test.ifError(err);
             test.done();
         });
+    },
+    "test addAll": function(test) {
+        test.expect(3);
+        var di = new Container();
+        di.addAll({
+            a: 5,
+            b: 'hello'
+        });
+        di.invoke(function(a, b) {
+            test.strictEqual(a, 5);
+            test.strictEqual(b, 'hello');
+        }, function(err) {
+            test.ifError(err);
+            test.done();
+        });
     }
 });
