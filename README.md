@@ -66,7 +66,28 @@ container.addAll({
 ```
 ####Container.addPath(name, path)
 ####Container.get(name, callback)
+retrieve a previously added dependency before running a callback function
+Example:
+
+```
+container.get('neededDependency', function(err, neededDependency) {
+    if(err) {
+        return err;
+    }
+    container.on('error', function(err) {
+        console.log('ERROR in DI container: ' + err.stack);
+    });
+});
+```
 ####Container.invoke(fn [, extraArguments], callback)
+invoke a function handing in a needed dependency
+Example:
+
+```
+container.invoke(function(neededDependency) {
+    a(neededDependency);
+}, callback);
+```
 ####Container.invokeAll(obj [, extraArguments], callback)
 ####Container.bind(fn [, extraArguments], callback)
 ####Container.bindAll(obj [, extraArguments], callback)
