@@ -1,8 +1,9 @@
 {
-  "name": "inject",
-  "version": "0.0.1",
+  "name": "container",
+  "version": "0.0.3",
   "author": "Bruno Windels <bruno.windels@gmail.com>",
   "description": "Dependency injection container for javascript",
+  "repository": "git://github.com/bwindels-nokia/container.git",
   "main": "./lib/index.js",
   "dependencies" : {
   	"async"   :  "0.x"
